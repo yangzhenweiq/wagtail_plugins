@@ -1,0 +1,5 @@
+- name: wagtail-settings
+  files:
+    - plugins/wagtail/apps/wagtail/settings/base.py
+    - plugins/wagtail/apps/wagtail/settings/dev.py
+    - plugins/wagtail/apps/wagtail/settings/production.py

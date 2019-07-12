@@ -25,3 +25,10 @@ spec:
           args: ["manage.py", "runserver", "0.0.0.0:8006"]
           ports:
             - containerPort: 8006
+          volumeMounts:
+            - mountPath: /wagtail_site/wagtail_site/settings/
+              name: settings
+      volumes:
+        - name: settings
+          configMap:
+            name: wagtail-settings  
