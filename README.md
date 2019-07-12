@@ -1,12 +1,10 @@
-tutor wagtail 插件。
+## tutor wagtail 插件。
 
 参考文档： https://docs.tutor.overhang.io/plugins.html
 
-添加 tutor wagtail 插件 
+安装插件
 
-在 tutor/plugins 下面 clone 代码后 执行: 
-
-pip install -e .
+    pip install -e .
 
 开启插件：
 
@@ -17,9 +15,11 @@ pip install -e .
  tutor config save 
 
 前提：需要通过插件的Dockerfile来build images： 
-hooks = {
-    "build-image": {"myimage": "myimage:latest"}
-}
+
+    hooks = {
+        "build-image": {"myimage": "myimage:latest"}
+    }
+    
 使用此钩子，用户将能够myimage:latest通过运行以下命令来构建docker镜像：
 tutor images build wagtail
 
