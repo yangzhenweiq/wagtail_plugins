@@ -1,5 +1,7 @@
 ## tutor wagtail 插件。
 
+wagtail docker化， 使用tutor插件实现 wagtail 部署。
+
 参考文档： https://docs.tutor.overhang.io/plugins.html
 
 安装插件
