@@ -6,7 +6,7 @@ setup(
     license="AGPLv3",
     author="yzw",
     author_email="327874145@qq.com",
-    description="A Tutor plugin for xblock in cms",
+    description="A Tutor plugin for wagtail",
     packages=["tutorwagtail"],
     include_package_data=True,
     python_requires=">=3.5",
