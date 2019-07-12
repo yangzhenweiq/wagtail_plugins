@@ -1,0 +1,23 @@
+# WAGTAIL 
+
+wagtail:
+  image: {{ WAGTAIL_DOCKER_IMAGE_SERVER }}
+  depends_on:
+    - mysql
+  ports:
+    - 8006:8000     
+  command: 
+    - /bin/sh
+    - -c
+    - |
+      python manage.py shell -c "from django.contrib.auth.models import User; User.objects.create_superuser('admin', 'admin@example.com', 'admin')"
+      python manage.py runserver 0.0.0.0:8000
+  restart: unless-stopped
+  environment:
+    MYSQL_DATABASE: {{ WAGTAIL_MYSQL_DATABASE }}
+    MYSQL_USER: {{ WAGTAIL_MYSQL_USERNAME }}
+    MYSQL_PASSWORD: {{ WAGTAIL_MYSQL_PASSWORD }}
+  volumes:
+    - ../plugins/wagtail/apps/wagtail/settings/:/wagtail_site/wagtail_site/settings/
+  
+    
