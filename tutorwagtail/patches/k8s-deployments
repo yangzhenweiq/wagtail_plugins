@@ -26,7 +26,7 @@ spec:
           ports:
             - containerPort: 8006
           volumeMounts:
-            - mountPath: /wagtail_site/wagtail_site/settings/
+            - mountPath: /elite-wagtail/elite_wagtail/elite_wagtail/settings/
               name: settings
       volumes:
         - name: settings

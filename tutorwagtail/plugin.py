@@ -6,6 +6,7 @@ HERE = os.path.abspath(os.path.dirname(__file__))
 config = { 
     "add": {
         "MYSQL_PASSWORD": "{{ 8|random_string }}",
+        "OAUTH2_SECRET": "{{ 8|random_string }}",
     },  
     "defaults": {
         "HOST": "wagtail.{{ LMS_HOST }}",
@@ -13,13 +14,14 @@ config = {
         "DOCKER_IMAGE_SERVER": "yangzhenweiq/wagtailtest001:latest",
         "MYSQL_DATABASE": "wagtail",
         "MYSQL_USERNAME": "saladbar",
+        "OAUTH2_KEY": "wagtail",
     },
 }
 
 templates = os.path.join(HERE, "templates")
 
 hooks = {
-    "init": ["mysql-client", "wagtail"],
+    "init": ["lms", "mysql-client", "wagtail"],
     "build-image": {"wagtail": "{{ WAGTAIL_DOCKER_IMAGE_SERVER }}"} ,
     "remote-image": {"wagtail": "{{ WAGTAIL_DOCKER_IMAGE_SERVER }}"}
 }

@@ -32,8 +32,5 @@ server {
 
     proxy_pass http://wagtail-backend;
   }
-
-
-  # 可以添加指定的静态资源加载。
 }
 

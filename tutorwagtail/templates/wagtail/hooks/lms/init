@@ -1,0 +1,11 @@
+./manage.py lms --settings=tutor.production manage_user wagtail wagtail@{{ LMS_HOST }} --staff --superuser
+
+./manage.py lms --settings=tutor.production create_oauth2_client \
+    "{% if ACTIVATE_HTTPS %}https{% else %}http{% endif %}://{{ WAGTAIL_HOST }}" \
+    "{% if ACTIVATE_HTTPS %}https{% else %}http{% endif %}://{{  WAGTAIL_HOST }}/complete/edx-oidc/" \
+    confidential \
+    --client_name wagtail \
+    --client_id {{  WAGTAIL_OAUTH2_KEY }} \
+    --client_secret {{  WAGTAIL_OAUTH2_SECRET }} \
+    --username wagtail \
+    --trusted
