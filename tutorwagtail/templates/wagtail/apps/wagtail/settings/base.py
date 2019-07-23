@@ -98,7 +98,7 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
         "HOST": "{{ MYSQL_HOST }}",
-        "PORT": "{{ MYSQL_PORT }}",
+        "PORT": {{ MYSQL_PORT }},
         "NAME": "{{ WAGTAIL_MYSQL_DATABASE }}",
         "USER": "{{ WAGTAIL_MYSQL_USERNAME }}",
         "PASSWORD": "{{ WAGTAIL_MYSQL_PASSWORD }}",
@@ -179,7 +179,7 @@ WAGTAIL_SITE_NAME = "elite_wagtail"
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
-BASE_URL = 'http://example.com'
+BASE_URL = 'http://wagtail.yzw.openedx.k8s.eliteu.xyz/'
 
 ### Social AUTHENTICATION
 
@@ -191,6 +191,7 @@ SOCIAL_AUTH_EDX_OIDC_SECRET = "{{ WAGTAIL_OAUTH2_SECRET }}"
 SOCIAL_AUTH_EDX_OIDC_URL_ROOT = "{% if ACTIVATE_HTTPS %}https{% else %}http{% endif %}://{{ LMS_HOST }}/oauth2"
 SOCIAL_AUTH_EDX_OIDC_LOGOUT_URL = "{% if ACTIVATE_HTTPS %}https{% else %}http{% endif %}://{{ LMS_HOST }}/logout"
 SOCIAL_AUTH_EDX_OIDC_ISSUER = "http://localhost:8000/oauth2"
+SOCIAL_AUTH_EDX_OIDC_PUBLIC_URL_ROOT = "{% if ACTIVATE_HTTPS %}https{% else %}http{% endif %}://{{ LMS_HOST }}/oauth2"
 SOCIAL_AUTH_REDIRECT_IS_HTTPS = False
 
 # This value should be the same as SOCIAL_AUTH_EDX_OIDC_SECRET

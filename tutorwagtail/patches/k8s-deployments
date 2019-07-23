@@ -22,9 +22,9 @@ spec:
         - name: wagtail
           image: {{ WAGTAIL_DOCKER_IMAGE_SERVER }}
           command: ["python"]
-          args: ["manage.py", "runserver", "0.0.0.0:8006"]
+          args: ["manage.py", "runserver", "0.0.0.0:8000"]
           ports:
-            - containerPort: 8006
+            - containerPort: 8000
           volumeMounts:
             - mountPath: /elite-wagtail/elite_wagtail/elite_wagtail/settings/
               name: settings

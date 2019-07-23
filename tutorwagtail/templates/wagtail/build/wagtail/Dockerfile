@@ -17,3 +17,7 @@ WORKDIR /elite-wagtail/elite_wagtail
 
 RUN pip install -r requirements.txt
 
+WORKDIR elite_wagtail/static
+
+RUN sass --update sass:css -E utf-8
+

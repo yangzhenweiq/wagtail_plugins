@@ -4,8 +4,9 @@ kind: Service
 metadata:
   name: wagtail
 spec:
-  type: LoadBalancer
+  type: NodePort
   ports:
-    - port: 8006
+    - port: 8000
+      protocol: TCP
   selector:
     app.kubernetes.io/name: wagtail
