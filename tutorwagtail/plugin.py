@@ -11,7 +11,7 @@ config = {
     "defaults": {
         "HOST": "wagtail.{{ LMS_HOST }}",
         "DOCKER_REGISTRY": "yangzhenweiq",
-        "DOCKER_IMAGE_SERVER": "yangzhenweiq/wagtailtest001:latest",
+        "DOCKER_IMAGE_SERVER": "yangzhenweiq/wagtailtest001:003",
         "MYSQL_DATABASE": "wagtail",
         "MYSQL_USERNAME": "saladbar",
         "OAUTH2_KEY": "wagtail",
