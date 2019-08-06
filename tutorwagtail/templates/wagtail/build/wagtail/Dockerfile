@@ -21,3 +21,5 @@ RUN sass --update elite_wagtail/static/sass:elite_wagtail/static/css -E utf-8
 
 CMD python manage.py runserver 0.0.0.0:8000
 
+
+
